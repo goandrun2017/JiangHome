@@ -1,15 +1,19 @@
 package com.jianghu.jh.ui.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
 
 import com.jianghu.jh.R;
+import com.jianghu.jh.ui.MainActivity;
+import com.jianghu.jh.ui.MyProfileActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,6 +34,7 @@ public class MeFagment extends Fragment {
     private LinearLayout ll_user_members;
     private LinearLayout ll_user_store;
     private LinearLayout ll_user_opinion;
+    private ImageView myprofiles;
 
 
     @Override
@@ -44,11 +49,22 @@ public class MeFagment extends Fragment {
 
     private void initView(View view) {
 
-//        ((TextView) view.findViewById(R.id.tv_top_txtTitle)).setText("我的主页");
         ll_user_life = (LinearLayout) view.findViewById(R.id.ll_user_life);
         ll_user_members = (LinearLayout) view.findViewById(R.id.ll_user_members);
         ll_user_store = (LinearLayout) view.findViewById(R.id.ll_user_store);
         ll_user_opinion = (LinearLayout) view.findViewById(R.id.ll_user4);
+        myprofiles = (ImageView) view.findViewById(R.id.profile_details);
+        myprofiles.setClickable(true);
+        myprofiles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getActivity(), MyProfileActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
 
         my_gridView_user = (GridView) view.findViewById(R.id.gridview);
 
