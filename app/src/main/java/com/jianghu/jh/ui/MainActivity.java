@@ -105,6 +105,7 @@ public class MainActivity extends BaseActivity {
                         index = 4;
                         break;
                 }
+                MainActivity.this.checkIndexActivity(index);
                 //通过fragments这个adapter还有index来替换帧布局中的内容
                 Fragment fragment = (Fragment) fragments.instantiateItem(mHomeContent, index);
                 //一开始将帧布局中 的内容设置为第一个
@@ -112,6 +113,26 @@ public class MainActivity extends BaseActivity {
                 fragments.finishUpdate(mHomeContent);
             }
         });
+    }
+
+    public void checkIndexActivity(int index){
+        Intent intent = new Intent(MainActivity.this, MyProfileActivity.class);
+        switch (index) {
+            case 1://发现
+                intent.putExtra("select", R.drawable.demo_discover);
+                startActivity(intent);
+                break;
+            case 2://发布
+                intent.putExtra("select", R.drawable.demo_publish);
+                startActivity(intent);
+                break;
+            case 3://消息
+                intent.putExtra("select", R.drawable.demo_info);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
     }
 
     //第一次启动时，我们让mHomeHomeRb这个radiobutton处于选中状态。
@@ -142,31 +163,32 @@ public class MainActivity extends BaseActivity {
                     fragment = new HomeFagment();
                     break;
                 case 1://发现
-//                    fragment = new OrderFagment();
-                    intent.putExtra("select", R.drawable.demo_discover);
-                    startActivity(intent);
+                    fragment = new OrderFagment();
+//                    intent.putExtra("select", R.drawable.demo_discover);
+//                    startActivity(intent);
 
 //                    bundle.putInt("select",1);
 //                    fragment.setArguments(bundle);
                     break;
                 case 2://发布
-                    intent.putExtra("select", R.drawable.demo_publish);
-                    startActivity(intent);
+//                    intent.putExtra("select", R.drawable.demo_publish);
+//                    startActivity(intent);
                     //Toast.makeText(App.getInstance(), "发布页面建设中...", Toast.LENGTH_SHORT).show();
-//                    fragment = new HomeFagment();
+                    fragment = new HomeFagment();
 //                    bundle.putInt("select",2);
 //                    fragment.setArguments(bundle);
                     break;
                 case 3://消息
-                    intent.putExtra("select", R.drawable.demo_info);
-                    startActivity(intent);
+//                    intent.putExtra("select", R.drawable.demo_info);
+//                    startActivity(intent);
                     //Toast.makeText(App.getInstance(), "消息页面建设中...", Toast.LENGTH_SHORT).show();
-//                    fragment = new HomeFagment();
+                    fragment = new HomeFagment();
 //                    bundle.putInt("select",3);
 //                    fragment.setArguments(bundle);
                     break;
                 case 4://我
                     fragment = new MeFagment();
+                    break;
                   //  fragment = new YSHomeFagment();
                 default:
                     new HomeFagment();
