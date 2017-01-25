@@ -16,6 +16,7 @@ import android.widget.GridView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.github.ksoichiro.android.observablescrollview.ObservableRecyclerView;
+import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
 import com.jianghu.jh.R;
 import com.jianghu.jh.base.App;
 import com.jianghu.jh.bean.Engine;
@@ -209,12 +210,12 @@ public class HomeFagment extends Fragment{
         mRecyclerView = (ObservableRecyclerView) view.findViewById(R.id.my_order_recycler_view_home);
         mLayoutManager = new LinearLayoutManager(parentActivity);
 
-        //mRecyclerView.setScrollViewCallbacks((ObservableScrollViewCallbacks) parentActivity);
+//        mRecyclerView.setScrollViewCallbacks((ObservableScrollViewCallbacks) parentActivity);
 
         //mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        //mRecyclerView.setScrollViewCallbacks(this);
-        // mRecyclerView.setItemAnimator(newDefaultItemAnimator());
+//        mRecyclerView.setScrollViewCallbacks(this);
+//         mRecyclerView.setItemAnimator(newDefaultItemAnimator());
 
 
         //设置adapter

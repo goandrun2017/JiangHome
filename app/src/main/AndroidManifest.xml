@@ -25,7 +25,7 @@
 
         <activity android:name="com.jianghu.jh.ui.MainActivity" android:theme="@style/AppTheme.Dark"></activity>
 
-        <activity android:name="com.jianghu.jh.ui.ImageActivity" android:theme="@style/AppTheme.Dark"></activity>
+        <activity android:name=".ui.MyImageActivity" android:theme="@style/AppTheme.Dark"></activity>
 
         <activity android:name="com.jianghu.jh.ui.ProductListActivity" android:theme="@style/AppTheme.Dark"></activity>
 

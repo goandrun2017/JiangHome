@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@color/main_bg"
         android:orientation="vertical">
 
@@ -18,14 +18,15 @@
             style="@style/BannerDefaultStyle"
             android:background="@color/white"
             app:banner_pointGravity="bottom|right"
-            app:banner_transitionEffect="depth" />
+            app:banner_transitionEffect="depth"
+            android:layout_height="94dp" />
 
 
         <android.support.v4.view.ViewPager
             android:id="@+id/myviewpager"
             android:layout_width="match_parent"
-            android:paddingTop="@dimen/space_15"
-            android:layout_height="165dp"
+            android:paddingTop="@dimen/space_5"
+            android:layout_height="144dp"
             android:layout_gravity="center"
             android:background="@color/white"
             android:scaleType="fitXY" />
@@ -33,7 +34,6 @@
         <LinearLayout
             android:id="@+id/liner1"
             android:layout_width="match_parent"
-            android:layout_height="5dp"
             android:background="@color/white"
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"
@@ -41,12 +41,12 @@
 
             android:textColor="@color/black"
 
-            ></LinearLayout>
+            android:layout_height="wrap_content"></LinearLayout>
 
         <com.viewpagerindicator.LinePageIndicator
             android:id="@+id/indicator"
             android:layout_width="fill_parent"
-            android:layout_height="10dp"
+            android:layout_height="wrap_content"
             android:background="@color/white"
             android:padding="5dip" />
 
@@ -55,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="0dp"
             android:background="@color/white"
             android:gravity="center_horizontal"
             android:orientation="horizontal">
@@ -152,7 +152,7 @@
 
         <View
             android:layout_width="wrap_content"
-            android:layout_height="1px"
+            android:layout_height="wrap_content"
             android:background="@color/between_line" />
 
         <!--<LinearLayout-->
@@ -252,13 +252,13 @@
         <LinearLayout
             android:id="@+id/my_order_layout"
             android:layout_width="match_parent"
-            android:layout_height="157dp"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_height="400dp">
             <com.github.ksoichiro.android.observablescrollview.ObservableRecyclerView
                 android:id="@+id/my_order_recycler_view_home"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:scrollbars="vertical"
                 />
         </LinearLayout>

@@ -66,7 +66,9 @@ public class MainActivity extends BaseActivity {
 
         initView();
         Intent intent = new Intent(this, LoginActivity.class);
+//        Intent intent1 = new Intent(this, MyImageActivity.class);
         startActivity(intent);
+
         isFirst = false;
 
     }
@@ -108,7 +110,6 @@ public class MainActivity extends BaseActivity {
                 //一开始将帧布局中 的内容设置为第一个
                 fragments.setPrimaryItem(mHomeContent, 0, fragment);
                 fragments.finishUpdate(mHomeContent);
-
             }
         });
     }
@@ -134,30 +135,35 @@ public class MainActivity extends BaseActivity {
         @Override
         public Fragment getItem(int i) {
             Fragment fragment = null;
+            Intent intent = new Intent(MainActivity.this, MyProfileActivity.class);
             Bundle bundle = new Bundle();
             switch (i) {
                 case 0://首页
                     fragment = new HomeFagment();
                     break;
                 case 1://发现
-                    fragment = new OrderFagment();
-//                    Intent intent = new Intent(MainActivity.this, ImageActivity.class);
-//                    startActivity(intent);
+//                    fragment = new OrderFagment();
+                    intent.putExtra("select", R.drawable.demo_discover);
+                    startActivity(intent);
 
-                    bundle.putInt("select",1);
-                    fragment.setArguments(bundle);
+//                    bundle.putInt("select",1);
+//                    fragment.setArguments(bundle);
                     break;
                 case 2://发布
+                    intent.putExtra("select", R.drawable.demo_publish);
+                    startActivity(intent);
                     //Toast.makeText(App.getInstance(), "发布页面建设中...", Toast.LENGTH_SHORT).show();
-                    fragment = new HomeFagment();
-                    bundle.putInt("select",2);
-                    fragment.setArguments(bundle);
+//                    fragment = new HomeFagment();
+//                    bundle.putInt("select",2);
+//                    fragment.setArguments(bundle);
                     break;
                 case 3://消息
+                    intent.putExtra("select", R.drawable.demo_info);
+                    startActivity(intent);
                     //Toast.makeText(App.getInstance(), "消息页面建设中...", Toast.LENGTH_SHORT).show();
-                    fragment = new HomeFagment();
-                    bundle.putInt("select",3);
-                    fragment.setArguments(bundle);
+//                    fragment = new HomeFagment();
+//                    bundle.putInt("select",3);
+//                    fragment.setArguments(bundle);
                     break;
                 case 4://我
                     fragment = new MeFagment();
@@ -166,7 +172,9 @@ public class MainActivity extends BaseActivity {
                     new HomeFagment();
                     break;
             }
-
+            if(fragment == null) {
+                fragment = new HomeFagment();
+            }
             return fragment;
         }
     };

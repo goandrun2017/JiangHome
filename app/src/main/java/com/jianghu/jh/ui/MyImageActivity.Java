@@ -2,37 +2,29 @@ package com.jianghu.jh.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 
 import com.jianghu.jh.R;
 
-/** 
- *  
- * @{# ImageActivity.java Create on 2013-5-2 下午9:10:01
- *  
- *     class desc: 启动画面 (1)判断是否是首次加载应用--采取读取SharedPreferences的方法 
- *     (2)是，则进入GuideActivity；否，则进入MainActivity (3)3s后执行(2)操作 
- *  
- *     <p> 
- *     Copyright: Copyright(c) 2013 
- *     </p> 
- * @Version 1.0 
- * @Author <a href="mailto:gaolei_xj@163.com">Leo</a> 
- *  
- *  
- */  
-public class ImageActivity extends Activity {
-    boolean isFirstIn = false;  
-  
-    private static final int GO_HOME = 1000;  
-    private static final int GO_GUIDE = 1001;  
-    // 延迟3秒  
-    private static final long SPLASH_DELAY_MILLIS = 3000;  
-  
-    private static final String SHAREDPREFERENCES_NAME = "first_pref";
-  
-    /** 
-     * Handler:跳转到不同界面 
-     */  
+public class MyImageActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.splash);
+    }
+//    boolean isFirstIn = false;
+//
+//    private static final int GO_HOME = 1000;
+//    private static final int GO_GUIDE = 1001;
+//    // 延迟3秒
+//    private static final long SPLASH_DELAY_MILLIS = 3000;
+//
+//    private static final String SHAREDPREFERENCES_NAME = "first_pref";
+//
+//    /**
+//     * Handler:跳转到不同界面
+//     */
 //    private Handler mHandler = new Handler() {
 //
 //        @Override
@@ -49,12 +41,12 @@ public class ImageActivity extends Activity {
 //        }
 //    };
   
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);  
-        setContentView(R.layout.splash);
-//        init();
-    }  
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.splash);
+////        init();
+//    }
   
 //    private void init() {
 //        // 读取SharedPreferences中需要的数据
@@ -76,14 +68,14 @@ public class ImageActivity extends Activity {
 //    }
 //
 //    private void goHome() {
-//        Intent intent = new Intent(ImageActivity.this, MainActivity.class);
-//        ImageActivity.this.startActivity(intent);
-//        ImageActivity.this.finish();
+//        Intent intent = new Intent(MyImageActivity.this, MainActivity.class);
+//        MyImageActivity.this.startActivity(intent);
+//        MyImageActivity.this.finish();
 //    }
 //
 //    private void goGuide() {
-//        Intent intent = new Intent(ImageActivity.this, MainActivity.class);
-//        ImageActivity.this.startActivity(intent);
-//        ImageActivity.this.finish();
+//        Intent intent = new Intent(MyImageActivity.this, MainActivity.class);
+//        MyImageActivity.this.startActivity(intent);
+//        MyImageActivity.this.finish();
 //    }
 }  

@@ -166,6 +166,7 @@ public class ProductListActivity extends BaseActivity implements ObservableScrol
 
     @Override
     public void onScrollChanged(int scrollY, boolean firstScroll, boolean dragging) {
+
     }
 
 
